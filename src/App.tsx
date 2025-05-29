@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./App.module.css";
 import TodoList from "./components/TodoList/TodoList";
 
@@ -9,21 +8,11 @@ const initialTodoItems = [
 ];
 
 function App() {
-  const [todos, setTodos] = useState(initialTodoItems);
-
-  const handleToggleTodo = (id: string) => {
-    setTodos((prevTodos) =>
-      prevTodos.map((todo) =>
-        todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
-      )
-    );
-  };
-
   return (
     <TodoList
+      title="todos"
       className={styles["todolist-wrapper"]}
-      todos={todos}
-      onToggleTodo={handleToggleTodo}
+      todos={initialTodoItems}
     />
   );
 }

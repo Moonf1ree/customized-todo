@@ -1,0 +1,25 @@
+.todo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 200px;
+  padding: 24px;
+  border: 1px solid rgba(99, 99, 99, 0.5);
+
+  -webkit-box-shadow: -5px -6px 8px 0px rgba(109, 139, 161, 0.2);
+  -moz-box-shadow: -5px -6px 8px 0px rgba(109, 139, 161, 0.2);
+  box-shadow: -5px -6px 8px 0px rgba(109, 139, 161, 0.2); // сгенерил через box-shadow generator
+}
+.checkbox {
+  border-radius: 500px;
+}
+
+.text {
+  color: #424242;
+  transition: opacity 0.3s ease-in-out; // все анимации, если будут, ease-in-out
+  &-completed {
+    text-decoration: line-through;
+    opacity: 50%;
+  }
+}

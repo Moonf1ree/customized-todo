@@ -1,0 +1,14 @@
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 8px 16px;
+  gap: 8px;
+  border: 1px solid rgba(99, 99, 99, 0.5);
+  border-top: none;
+}
+.items-left {
+  color: #424242;
+  opacity: 50%;
+}
