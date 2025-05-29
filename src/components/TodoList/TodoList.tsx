@@ -1,11 +1,10 @@
-import { useId, useState } from "react";
-import type { FC } from "react";
-import type { ITodoListProps } from "./types";
+import { useId, useState, FC } from "react";
+import { ITodoListProps } from "./types";
 import Todo from "./subcomponents/Todo/Todo";
 import { InputAdornment, TextField, Typography } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
 import TodoListFooter from "./subcomponents/TodoListFooter/TodoListFooter";
-import type { ETodoListFooterFilterStates } from "./subcomponents/TodoListFooter/types";
+import { ETodoListFooterFilterStates } from "./subcomponents/TodoListFooter/types";
 import styles from "./TodoList.module.scss";
 import clsx from "clsx";
 
@@ -60,11 +59,20 @@ const TodoList: FC<ITodoListProps> = ({
   });
 
   return (
-    <div className={clsx(styles["todolist-wrapper"], className)} style={style}>
-      <Typography className={styles["title"]} variant="h1">
+    <div
+      className={clsx(styles["todolist-wrapper"], className)}
+      style={style}
+      data-testid="todolist-wrapper-test"
+    >
+      <Typography
+        className={styles["title"]}
+        variant="h1"
+        data-testid="todolist-title-test"
+      >
         {title}
       </Typography>
       <TextField
+        data-testid="todolist-textfield-test"
         value={newTodoText}
         slotProps={{
           input: {

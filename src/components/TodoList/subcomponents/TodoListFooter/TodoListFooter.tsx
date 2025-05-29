@@ -1,6 +1,6 @@
 import { Button, Typography } from "@mui/material";
-import type { FC } from "react";
-import type { ITodoListFooterProps } from "./types";
+import { FC } from "react";
+import { ITodoListFooterProps } from "./types";
 import styles from "./TodoListFooter.module.scss";
 import clsx from "clsx";
 
@@ -13,7 +13,11 @@ const TodoListFooter: FC<ITodoListFooterProps> = ({
   onClear,
 }) => {
   return (
-    <div className={clsx(styles["footer-wrapper"], className)} style={style}>
+    <div
+      className={clsx(styles["footer-wrapper"], className)}
+      style={style}
+      data-testid="todolist-footer-test"
+    >
       <Typography className={styles["items-left"]} variant="caption">
         {`${itemsLeft} item${itemsLeft !== 1 ? "s" : ""} left`}
       </Typography>
@@ -22,6 +26,7 @@ const TodoListFooter: FC<ITodoListFooterProps> = ({
           style={{ fontWeight: "normal", color: "#424242" }}
           color={filter === "all" ? "primary" : "inherit"}
           onClick={() => onFilterChange("all")}
+          data-testid="todolist-footer-filter-all"
         >
           <Typography variant="caption">All</Typography>
         </Button>
@@ -30,6 +35,7 @@ const TodoListFooter: FC<ITodoListFooterProps> = ({
           style={{ fontWeight: "normal", color: "#424242" }}
           color={filter === "active" ? "primary" : "inherit"}
           onClick={() => onFilterChange("active")}
+          data-testid="todolist-footer-filter-active"
         >
           <Typography variant="caption">Active</Typography>
         </Button>
@@ -37,6 +43,7 @@ const TodoListFooter: FC<ITodoListFooterProps> = ({
           style={{ fontWeight: "normal", color: "#424242" }}
           color={filter === "completed" ? "primary" : "inherit"}
           onClick={() => onFilterChange("completed")}
+          data-testid="todolist-footer-filter-completed"
         >
           <Typography variant="caption">Completed</Typography>
         </Button>
@@ -46,7 +53,12 @@ const TodoListFooter: FC<ITodoListFooterProps> = ({
         color={filter === "active" ? "primary" : "inherit"}
         onClick={onClear}
       >
-        <Typography variant="caption">Clear completed</Typography>
+        <Typography
+          variant="caption"
+          data-testid="todolist-footer-button-clear-completed"
+        >
+          Clear completed
+        </Typography>
       </Button>
     </div>
   );

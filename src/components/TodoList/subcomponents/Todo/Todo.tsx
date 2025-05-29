@@ -1,6 +1,5 @@
-import type { FC } from "react";
-import type { ITodoItemProps } from "./types";
-import styles from "./Todo.module.scss";
+import { FC } from "react";
+import { ITodoItemProps } from "./types";
 import {
   Checkbox,
   FormControlLabel,
@@ -10,6 +9,7 @@ import {
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import clsx from "clsx";
+import styles from "./Todo.module.scss";
 
 const Todo: FC<ITodoItemProps> = ({ id, label, isCompleted, onToggle }) => {
   const handleChange = () => {
@@ -19,7 +19,11 @@ const Todo: FC<ITodoItemProps> = ({ id, label, isCompleted, onToggle }) => {
   };
 
   return (
-    <div id={id} className={styles["todo-wrapper"]}>
+    <div
+      id={id}
+      className={styles["todo-wrapper"]}
+      data-testid={`todo-${id}-test`}
+    >
       <FormGroup>
         <FormControlLabel
           control={
@@ -30,6 +34,7 @@ const Todo: FC<ITodoItemProps> = ({ id, label, isCompleted, onToggle }) => {
               onChange={handleChange}
               icon={<RadioButtonUncheckedIcon />}
               checkedIcon={<CheckCircleOutlineIcon />}
+              data-testid="checkbox-test"
             />
           }
           label={

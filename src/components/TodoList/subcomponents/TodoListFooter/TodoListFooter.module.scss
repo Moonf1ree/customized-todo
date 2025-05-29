@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  min-width: 100%;
+  width: 700px;
   padding: 8px 16px;
   gap: 8px;
   border: 1px solid rgba(99, 99, 99, 0.5);
