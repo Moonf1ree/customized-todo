@@ -1,1 +1,5 @@
-# Тестовое задание для MindBox
+# Customized todo
+## Installation
+
+yarn
+yarn run dev
