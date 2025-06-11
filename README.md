@@ -1,5 +1,6 @@
 # Customized todo
+
 ## Installation
 
-yarn
-yarn run dev
+### ```yarn```node
+### ```yarn run dev```node
