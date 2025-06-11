@@ -2,5 +2,5 @@
 
 ## Installation
 
-### ``` yarn ``
-### ``` yarn run dev ```
+###  yarn
+###  yarn run dev 
