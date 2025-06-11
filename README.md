@@ -2,5 +2,5 @@
 
 ## Installation
 
-### ```yarn```node
-### ```yarn run dev```node
+### ```yarn``
+### ```yarn run dev```
